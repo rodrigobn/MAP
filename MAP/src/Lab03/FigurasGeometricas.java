@@ -22,20 +22,20 @@ public class FigurasGeometricas {
 	public void a(int tipoDaFigura){
 		switch (tipoDaFigura) {
 		case R:
-			System.out.println("A área deste retángulo é: " + alturaRetangulo * larguraRetangulo);
+			System.out.println("A area deste retangulo e: " + alturaRetangulo * larguraRetangulo);
 			break;
 		case Q:
-			System.out.println("A área deste quadrado é: " + 2 * larguraQuadrado);
+			System.out.println("A area deste quadrado e: " + 2 * larguraQuadrado);
 			break;
 		case C:
-			System.out.println("A área deste círculo é: " + (2 * 3.14 * raioCirculo));
+			System.out.println("A area deste circulo e: " + (2 * 3.14 * raioCirculo));
 			break;
 		case T:
-			System.out.println("Todas as áreas são: " +  (alturaRetangulo * larguraRetangulo) + " " + (2 * larguraQuadrado) + " e " 
-					+ (2 * 3.14 * raioCirculo) + " retángulo, quadrado e círculo, respectivamente");
+			System.out.println("Todas as areas sao: " +  (alturaRetangulo * larguraRetangulo) + " " + (2 * larguraQuadrado) + " e " 
+					+ (2 * 3.14 * raioCirculo) + " retangulo, quadrado e circulo, respectivamente");
 			break;
 		default:
-			System.out.println("O valor que vc forneceu não representa nenhuma figura geométrica conhecida!");
+			System.out.println("O valor que vc forneceu nao representa nenhuma figura geometrica conhecida!");
 			break;
 		}
 	}
@@ -46,13 +46,13 @@ public class FigurasGeometricas {
 		
 		if (tipoDaFigura == -1){
 			perimetro = (2 * alturaRetangulo) + (2 * larguraRetangulo);
-			System.out.println("O perímetro do retángulo é: " + perimetro);
+			System.out.println("O perimetro do retangulo e: " + perimetro);
 		}else if (tipoDaFigura == 0){
 			perimetro = 4 * larguraQuadrado;
-			System.out.println("O perímetro do quadrado é: " + perimetro);
+			System.out.println("O perimetro do quadrado e: " + perimetro);
 		}else if (tipoDaFigura == 1){
 			perimetro = (int) (3.14 * raioCirculo);
-			System.out.println("O perímetro do círculo é: " + perimetro);
+			System.out.println("O perimetro do carculo e: " + perimetro);
 		}else if (tipoDaFigura == 2){
 			perimetro = -234;
 		}else{
@@ -65,7 +65,7 @@ public class FigurasGeometricas {
 		String toString;
 		switch (tipoDaFigura) {
 		case R:
-			toString = "O retángulo criado tem altura de tamanho: " + alturaRetangulo + 
+			toString = "O retangulo criado tem altura de tamanho: " + alturaRetangulo + 
 			"e largura de tamanho: " + larguraRetangulo;
 			break;
 		case Q:
@@ -75,7 +75,7 @@ public class FigurasGeometricas {
 			toString = "O circulo criado tem raio de tamanho: " + raioCirculo;
 			break;
 		case T:
-			toString = "O retángulo criado tem altura: " + alturaRetangulo + " e largura de: " + larguraRetangulo +
+			toString = "O retangulo criado tem altura: " + alturaRetangulo + " e largura de: " + larguraRetangulo +
 			" O quadrado criado tem lados de: " + larguraQuadrado +
 			" O circulo criado tem raio de: " + raioCirculo;
 			break;
