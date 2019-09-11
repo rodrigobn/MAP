@@ -1,10 +1,12 @@
-package Lab03;
+package models;
+
+import interfaces.FiguraGeometricaInterface;
 
 public class Main {
 
 	public static void main(String[] args) {
-		FiguraGeometrica quadrado1 = new Quadrado(10);
-		FiguraGeometrica quadrado2 = new Quadrado(20);
+		FiguraGeometricaInterface quadrado1 = new Quadrado(10);
+		FiguraGeometricaInterface quadrado2 = new Quadrado(20);
 		
 		System.out.println("\nAreas das figuras geometricas:");
 		System.out.println(quadrado1.toString() + " Area = " + quadrado1.area());

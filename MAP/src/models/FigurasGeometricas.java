@@ -1,4 +1,4 @@
-package Lab03;
+package models;
 
 public class FigurasGeometricas {
 
