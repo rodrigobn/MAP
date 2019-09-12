@@ -6,8 +6,13 @@ public class Quadrado implements FiguraGeometricaInterface {
 
 	private double largura;
 	
-	public Quadrado(double lado) {
-		this.largura = lado;	
+	public Quadrado(double lado) throws Exception {
+		if (lado < 0) {
+			Exception erro = new Exception("ERRO - Numero negativo");
+			throw erro;			
+		} else {
+			this.largura = lado;
+		}			
 	}
 
 	@Override
@@ -24,8 +29,13 @@ public class Quadrado implements FiguraGeometricaInterface {
 		return largura;
 	}
 
-	public void setLado(double lado) {
-		this.largura = lado;
+	public void setLado(double lado) throws Exception {
+		if (lado < 0) {
+			Exception erro = new Exception("ERRO - Numero negativo");
+			throw erro;			
+		} else {
+			this.largura = lado;
+		}
 	}
 
 	@Override
@@ -43,8 +53,7 @@ public class Quadrado implements FiguraGeometricaInterface {
 
 	@Override
 	public double calculaMedia(FiguraGeometricaInterface fig1, FiguraGeometricaInterface fig2) {
-		// TODO Auto-generated method stub
-		return 0;
+		return ( fig1.area() + fig2.area() ) / 2;
 	}
 
 }

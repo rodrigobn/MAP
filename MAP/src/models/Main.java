@@ -4,7 +4,7 @@ import interfaces.FiguraGeometricaInterface;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		FiguraGeometricaInterface quadrado1 = new Quadrado(10);
 		FiguraGeometricaInterface quadrado2 = new Quadrado(20);
 		
@@ -20,7 +20,7 @@ public class Main {
 		System.out.println("Media entre " + quadrado1.toString() + " e " + quadrado2.toString());
 		System.out.println(quadrado1.calculaMedia(quadrado1, quadrado2));
 		
-		System.out.println("\nComparação entre dois quadrados: \n 0 -> não é igual \n-1 -> é igual");
+		System.out.println("\nComparaï¿½ï¿½o entre dois quadrados: \n 0 -> nï¿½o ï¿½ igual \n-1 -> ï¿½ igual");
 		System.out.println(quadrado1.compareTo(quadrado2));
 
 	}
