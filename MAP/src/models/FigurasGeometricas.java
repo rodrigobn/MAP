@@ -1,89 +1,103 @@
 package models;
 
+import exceptions.PerimetroException;
+
 public class FigurasGeometricas {
 
-	public static final int R = -1;
-	public static final int Q = 0;
-	public static final int C = 1;
-	public static final int T = 2;
-	
-	private int alturaRetangulo;
-	private int larguraRetangulo;
-	private int larguraQuadrado;
-	private int raioCirculo; 
-	
-	public FigurasGeometricas(int altura, int largura, int lado, int raio){
-		this.alturaRetangulo = altura;
-		this.larguraRetangulo = largura;
-		this.larguraQuadrado = lado;
-		this.raioCirculo = raio;
+	private Quadrado quadrado;
+	private Retangulo retangulo;
+	private Circulo circulo;
+
+	public FigurasGeometricas(double altura, double largura, double lado, double raio) {
+		quadrado = new Quadrado(lado);
+		retangulo = new Retangulo(altura, largura);
+		circulo = new Circulo(raio);
 	}
 	
-	public void a(int tipoDaFigura){
-		switch (tipoDaFigura) {
-		case R:
-			System.out.println("A area deste retangulo e: " + alturaRetangulo * larguraRetangulo);
-			break;
-		case Q:
-			System.out.println("A area deste quadrado e: " + 2 * larguraQuadrado);
-			break;
-		case C:
-			System.out.println("A area deste circulo e: " + (2 * 3.14 * raioCirculo));
-			break;
-		case T:
-			System.out.println("Todas as areas sao: " +  (alturaRetangulo * larguraRetangulo) + " " + (2 * larguraQuadrado) + " e " 
-					+ (2 * 3.14 * raioCirculo) + " retangulo, quadrado e circulo, respectivamente");
-			break;
-		default:
-			System.out.println("O valor que vc forneceu nao representa nenhuma figura geometrica conhecida!");
-			break;
-		}
+	public String imprimirAreaQuadrado() {
+
+		String area = "A area deste quadrado e: " + quadrado.area();
+		
+		System.out.println(area);
+
+		return area;
+
 	}
 
-	public int p(int tipoDaFigura){
-		
-		int perimetro;
-		
-		if (tipoDaFigura == -1){
-			perimetro = (2 * alturaRetangulo) + (2 * larguraRetangulo);
-			System.out.println("O perimetro do retangulo e: " + perimetro);
-		}else if (tipoDaFigura == 0){
-			perimetro = 4 * larguraQuadrado;
-			System.out.println("O perimetro do quadrado e: " + perimetro);
-		}else if (tipoDaFigura == 1){
-			perimetro = (int) (3.14 * raioCirculo);
-			System.out.println("O perimetro do carculo e: " + perimetro);
-		}else if (tipoDaFigura == 2){
-			perimetro = -234;
-		}else{
-			perimetro = -2658;
-		}
+	public String imprimirAreaRetangulo() {
+
+		String area = "A area deste retangulo e: " + retangulo.area();
+		System.out.println(area);
+		return area;
+
+	}
+
+	public String imprimirAreaCirculo() {
+		String area = "A area deste circulo e: " + circulo.area();
+		System.out.println(area);
+		return area;
+
+	}
+
+	public String imprimirAreaTodos() {
+		String area = "Todas as areas sao: " + retangulo.area() + " " + quadrado.area()
+				+ " e " + circulo.area() + " retangulo, quadrado e circulo, respectivamente";
+		System.out.println(area);
+		return area;
+	}
+
+	public String imprimirPerimetroQuadrado() {
+		String perimetro = "O perimetro do quadrado e: " + quadrado.perimetro() ;
+		System.out.println(perimetro);
 		return perimetro;
-	}
-	
-	public String toStringDaFigura(int tipoDaFigura){
-		String toString;
-		switch (tipoDaFigura) {
-		case R:
-			toString = "O retangulo criado tem altura de tamanho: " + alturaRetangulo + 
-			"e largura de tamanho: " + larguraRetangulo;
-			break;
-		case Q:
-			toString = "O quadrado criado tem lados de tamanho: " + larguraQuadrado; 
-			break;
-		case C:
-			toString = "O circulo criado tem raio de tamanho: " + raioCirculo;
-			break;
-		case T:
-			toString = "O retangulo criado tem altura: " + alturaRetangulo + " e largura de: " + larguraRetangulo +
-			" O quadrado criado tem lados de: " + larguraQuadrado +
-			" O circulo criado tem raio de: " + raioCirculo;
-			break;
 
-		default:
-			toString = null;
-			break;
-		}
+	}
+
+	public String imprimirPerimetroRetangulo() {
+		String perimetro = "O perimetro do retangulo e: " + retangulo.perimetro() ;
+		System.out.println(perimetro);
+		return perimetro;
+
+	}
+
+	public String imprimirPerimetroCirculo() throws PerimetroException {
+		String perimetro = "O perimetro do circulo e: " + circulo.perimetro();
+		System.out.println(perimetro);
+		return perimetro;
+
+	}
+
+
+	public String imprimirToStringQuadrado() {
+		String toString = "O quadrado criado tem lados de tamanho: " + quadrado.getLado();
+		System.out.println(toString);
 		return toString;
 	}
+
+	public String imprimirToStringRetangulo() {
+
+		String toString = "O retangulo criado tem altura de tamanho: " + retangulo.getAlturaRetangulo() + "e largura de tamanho: "
+				+ retangulo.getLarguraRetangulo();
+		System.out.println(toString);
+		return toString;
+
+	}
+
+	public String imprimirToStringCirculo() {
+
+		String toString = "O circulo criado tem raio de tamanho: " + circulo.getRaio();
+		System.out.println(toString);
+		return toString;
+	}
+
+	public String imprimirToStringTodos() {
+
+		String toString = "O retangulo criado tem altura: " + retangulo.getAlturaRetangulo() + " e largura de: " + retangulo.getLarguraRetangulo()
+				+ " O quadrado criado tem lados de: " + quadrado.getLado() + " O circulo criado tem raio de: "
+				+ circulo.getRaio();
+		System.out.println(toString);
+		return toString;
+
+	}
+
 }

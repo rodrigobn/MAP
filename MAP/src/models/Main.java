@@ -21,7 +21,7 @@ public class Main {
 		System.out.println(quadrado1.calculaMedia(quadrado1, quadrado2));
 		
 		System.out.println("\nCompara��o entre dois quadrados: \n 0 -> n�o � igual \n-1 -> � igual");
-		System.out.println(quadrado1.compareTo(quadrado2));
+		
 
 	}
 

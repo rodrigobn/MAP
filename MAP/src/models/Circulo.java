@@ -1,5 +1,6 @@
 package models;
 
+import exceptions.PerimetroException;
 import interfaces.FiguraGeometricaInterface;
 
 public class Circulo implements FiguraGeometricaInterface{
@@ -19,11 +20,6 @@ public class Circulo implements FiguraGeometricaInterface{
 		this.raio = raio;
 	}
 
-	@Override
-	public int compareTo(FiguraGeometricaInterface o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 	@Override
 	public double area() {
@@ -32,9 +28,13 @@ public class Circulo implements FiguraGeometricaInterface{
 	}
 
 	@Override
-	public double perimetro() {
+	public double perimetro() throws PerimetroException{
 		// TODO Auto-generated method stub
-		return 3.14 * raio;
+		double perimetro = 3.14 * raio;
+		if (perimetro == -234 || perimetro == -2658) {
+			throw new PerimetroException();
+		}
+		return perimetro;
 	}
 
 	@Override

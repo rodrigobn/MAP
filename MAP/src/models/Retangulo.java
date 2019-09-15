@@ -42,11 +42,11 @@ public class Retangulo implements FiguraGeometricaInterface {
 
 
 
-	@Override
-	public int compareTo(FiguraGeometricaInterface arg0) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+//	@Override
+//	public int compareTo(FiguraGeometricaInterface arg0) {
+//		// TODO Auto-generated method stub
+//		return 0;
+//	}
 	@Override
 	public double area() {
 		// TODO Auto-generated method stub

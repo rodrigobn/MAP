@@ -4,51 +4,36 @@ import interfaces.FiguraGeometricaInterface;
 
 public class Quadrado implements FiguraGeometricaInterface {
 
-	private double largura;
+	private double lado;
 	
-	public Quadrado(double lado) throws Exception {
-		if (lado < 0) {
-			Exception erro = new Exception("ERRO - Numero negativo");
-			throw erro;			
-		} else {
-			this.largura = lado;
-		}			
+	public Quadrado(double lado) {
+		
+		this.lado = lado;
+	
 	}
 
 	@Override
 	public double area() {
-		return this.largura * 2;
+		return this.lado * 2;
 	}
 
 	@Override
 	public double perimetro() {
-		return this.largura * 4;
+		return this.lado * 4;
 	}
 
 	public double getLado() {
-		return largura;
+		return lado;
 	}
 
 	public void setLado(double lado) throws Exception {
-		if (lado < 0) {
-			Exception erro = new Exception("ERRO - Numero negativo");
-			throw erro;			
-		} else {
-			this.largura = lado;
-		}
+			this.lado = lado;
 	}
 
-	@Override
-	public int compareTo(FiguraGeometricaInterface o) {
-		if (this.getLado() == ((Quadrado) o).getLado()) {
-			return -1;
-		}
-		return 0;
-	}
 
 	@Override
 	public String toString() {
-		return "Quadrado [lado = " + largura + "]";
+		return "Quadrado [lado = " + lado + "]";
 	}
 
 	@Override

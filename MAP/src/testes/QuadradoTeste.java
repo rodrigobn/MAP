@@ -66,15 +66,6 @@ class QuadradoTeste {
 		assertEquals(quadrado1.getLado(), 20);
 	}
 
-	@Test
-	void testCompareTo() throws Exception {
-		Quadrado quadrado1 = new Quadrado(10);
-		Quadrado quadrado2 = new Quadrado(20);
-		assertEquals(quadrado1.compareTo(quadrado2), 0);
-		
-		quadrado2.setLado(10);
-		assertEquals(quadrado1.compareTo(quadrado2), -1);
-	}
 
 	@Test
 	void testCalculaMedia() throws Exception {
