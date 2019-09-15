@@ -1,26 +1,23 @@
 package interfaces;
 
-import org.junit.Test;
+import exceptions.NumeroNegativoException;
 
 public interface FiguraGeometricaTeste {
 	
-	@Test
+	
 	public void isNull();
 	
-	@Test 
-	public void isFigura();
 	
-	@Test
-	public void area();
+	public void isFiguraComplete() throws NumeroNegativoException;
 	
-	@Test
-	public void areaErro();
+	public void figuraComParametroInvalido();
 	
 	
-	@Test 
-	public void perimetro();
+	public void area() throws NumeroNegativoException;
 	
-	@Test
-	public void perimetroErro();
+	
+
+	public void perimetro() throws NumeroNegativoException;
+	
 
 }

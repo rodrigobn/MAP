@@ -1,6 +1,8 @@
 package models;
 
-import exceptions.PerimetroException;
+import exceptions.FigurasDiferentesException;
+import exceptions.NumeroNegativoException;
+import interfaces.FiguraGeometricaInterface;
 
 public class FigurasGeometricas {
 
@@ -8,7 +10,7 @@ public class FigurasGeometricas {
 	private Retangulo retangulo;
 	private Circulo circulo;
 
-	public FigurasGeometricas(double altura, double largura, double lado, double raio) {
+	public FigurasGeometricas(double altura, double largura, double lado, double raio) throws NumeroNegativoException {
 		quadrado = new Quadrado(lado);
 		retangulo = new Retangulo(altura, largura);
 		circulo = new Circulo(raio);
@@ -60,11 +62,10 @@ public class FigurasGeometricas {
 
 	}
 
-	public String imprimirPerimetroCirculo() throws PerimetroException {
+	public String imprimirPerimetroCirculo() {
 		String perimetro = "O perimetro do circulo e: " + circulo.perimetro();
 		System.out.println(perimetro);
 		return perimetro;
-
 	}
 
 
@@ -98,6 +99,18 @@ public class FigurasGeometricas {
 		System.out.println(toString);
 		return toString;
 
+	}
+	public double calculaMedia(FiguraGeometricaInterface figura1, FiguraGeometricaInterface figura2) throws FigurasDiferentesException {
+		if(figura1.getClass() == figura2.getClass()) {
+			double area1 = figura1.area();
+			double area2 = figura2.area();
+			
+			return (area1 + area2)/2;
+
+			
+		}
+		throw new FigurasDiferentesException();
+		
 	}
 
 }

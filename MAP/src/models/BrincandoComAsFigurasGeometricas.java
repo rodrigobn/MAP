@@ -1,10 +1,10 @@
 package models;
 
-import exceptions.PerimetroException;
+import exceptions.NumeroNegativoException;
 
 public class BrincandoComAsFigurasGeometricas {
 
-	public static void main(String[] args) throws PerimetroException {
+	public static void main(String[] args) throws NumeroNegativoException {
 
 		FigurasGeometricas figura = new FigurasGeometricas(10, 5, 7, 25);
 		

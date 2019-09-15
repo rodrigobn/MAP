@@ -1,15 +1,19 @@
 package models;
 
+import exceptions.NumeroNegativoException;
 import interfaces.FiguraGeometricaInterface;
 
 public class Quadrado implements FiguraGeometricaInterface {
 
 	private double lado;
-	
-	public Quadrado(double lado) {
-		
+
+	public Quadrado(double lado) throws NumeroNegativoException {
+		if (lado < 0) {
+			throw new NumeroNegativoException();
+		}
+
 		this.lado = lado;
-	
+
 	}
 
 	@Override
@@ -27,18 +31,15 @@ public class Quadrado implements FiguraGeometricaInterface {
 	}
 
 	public void setLado(double lado) throws Exception {
-			this.lado = lado;
+		if (lado < 0) {
+			throw new NumeroNegativoException();
+		}
+		this.lado = lado;
 	}
-
 
 	@Override
 	public String toString() {
 		return "Quadrado [lado = " + lado + "]";
-	}
-
-	@Override
-	public double calculaMedia(FiguraGeometricaInterface fig1, FiguraGeometricaInterface fig2) {
-		return ( fig1.area() + fig2.area() ) / 2;
 	}
 
 }

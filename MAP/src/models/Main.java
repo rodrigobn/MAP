@@ -5,8 +5,9 @@ import interfaces.FiguraGeometricaInterface;
 public class Main {
 
 	public static void main(String[] args) throws Exception {
-		FiguraGeometricaInterface quadrado1 = new Quadrado(10);
+		FiguraGeometricaInterface quadrado1 = new Quadrado(-1);
 		FiguraGeometricaInterface quadrado2 = new Quadrado(20);
+		FiguraGeometricaInterface c = new Circulo(20);
 		
 		System.out.println("\nAreas das figuras geometricas:");
 		System.out.println(quadrado1.toString() + " Area = " + quadrado1.area());
@@ -18,10 +19,14 @@ public class Main {
 		
 		System.out.println("\nMedias entre duas figuras geometricas:");
 		System.out.println("Media entre " + quadrado1.toString() + " e " + quadrado2.toString());
-		System.out.println(quadrado1.calculaMedia(quadrado1, quadrado2));
+
 		
-		System.out.println("\nCompara��o entre dois quadrados: \n 0 -> n�o � igual \n-1 -> � igual");
+		System.out.println(quadrado1.getClass() == c.getClass());
 		
+		FigurasGeometricas figura = new FigurasGeometricas(10, 5, 7, 25);
+		
+		figura.calculaMedia(quadrado1, quadrado2);
+		System.out.println(figura.calculaMedia(quadrado1, c));
 
 	}
 

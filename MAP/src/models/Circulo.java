@@ -1,14 +1,16 @@
 package models;
 
-import exceptions.PerimetroException;
+import exceptions.NumeroNegativoException;
 import interfaces.FiguraGeometricaInterface;
 
-public class Circulo implements FiguraGeometricaInterface{
-	
+public class Circulo implements FiguraGeometricaInterface {
+
 	private double raio;
 
-	public Circulo(double raio) {
-		super();
+	public Circulo(double raio) throws NumeroNegativoException {
+		if (raio < 0) {
+			throw new NumeroNegativoException();
+		}
 		this.raio = raio;
 	}
 
@@ -16,10 +18,12 @@ public class Circulo implements FiguraGeometricaInterface{
 		return raio;
 	}
 
-	public void setRaio(double raio) {
+	public void setRaio(double raio) throws NumeroNegativoException {
+		if (raio < 0) {
+			throw new NumeroNegativoException();
+		}
 		this.raio = raio;
 	}
-
 
 	@Override
 	public double area() {
@@ -28,22 +32,11 @@ public class Circulo implements FiguraGeometricaInterface{
 	}
 
 	@Override
-	public double perimetro() throws PerimetroException{
+	public double perimetro() {
 		// TODO Auto-generated method stub
 		double perimetro = 3.14 * raio;
-		if (perimetro == -234 || perimetro == -2658) {
-			throw new PerimetroException();
-		}
+
 		return perimetro;
 	}
-
-	@Override
-	public double calculaMedia(FiguraGeometricaInterface fig1, FiguraGeometricaInterface fig2) {
-		// TODO Auto-generated method stub
-		return 0;
-	} 
-	
-	
-	
 
 }

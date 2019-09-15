@@ -4,11 +4,41 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class RetanguloTeste {
+import exceptions.NumeroNegativoException;
+import interfaces.FiguraGeometricaTeste;
 
+class RetanguloTeste implements FiguraGeometricaTeste{
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	@Override
+	public void isNull() {
+		// TODO Auto-generated method stub
+		
 	}
+	@Test
+	@Override
+	public void isFiguraComplete() throws NumeroNegativoException {
+		// TODO Auto-generated method stub
+		
+	}
+	@Test
+	@Override
+	public void figuraComParametroInvalido() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Test
+	@Override
+	public void area() throws NumeroNegativoException {
+		// TODO Auto-generated method stub
+		
+	}
+	@Test
+	@Override
+	public void perimetro() throws NumeroNegativoException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 
 }

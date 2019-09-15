@@ -6,10 +6,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
+import exceptions.NumeroNegativoException;
 import interfaces.FiguraGeometricaInterface;
+import interfaces.FiguraGeometricaTeste;
 import models.Quadrado;
 
-class QuadradoTeste {
+class QuadradoTeste implements FiguraGeometricaTeste{
 
 	@Test
 	void testQuadrado() {
@@ -25,18 +27,6 @@ class QuadradoTeste {
 		
 		assertNull(quadrado);
 		
-	}
-
-	@Test
-	void testArea() throws Exception {
-		Quadrado quadrado1 = new Quadrado(10);
-		assertEquals(quadrado1.area(), 20);
-	}
-
-	@Test
-	void testPerimetro() throws Exception {
-		Quadrado quadrado1 = new Quadrado(10);
-		assertEquals(quadrado1.perimetro(), 40);
 	}
 
 	@Test
@@ -66,15 +56,47 @@ class QuadradoTeste {
 		assertEquals(quadrado1.getLado(), 20);
 	}
 
-
-	@Test
-	void testCalculaMedia() throws Exception {
-		Quadrado quadrado1 = new Quadrado(10);
-		Quadrado quadrado2 = new Quadrado(20);
-		assertEquals(quadrado1.calculaMedia(quadrado1, quadrado2), 30);
+	@Override
+	public void isNull() {
+		Quadrado quadrado = null;
 		
-		quadrado2.setLado(10);
-		assertEquals(quadrado1.calculaMedia(quadrado1, quadrado2), 20);
+		assertNull(quadrado);
+	
+		
 	}
+	@Test
+	@Override
+	public void isFiguraComplete() throws NumeroNegativoException {
+		Quadrado quadrado = new Quadrado(10);
+		
+		assertEquals(quadrado.getLado(), 10);
+	}
+	@Test
+	@Override
+	public void figuraComParametroInvalido() {
+		
+		try {
+			Quadrado quadrado1 = new Quadrado(-1);
+		} catch (NumeroNegativoException e) {
+			// TODO Auto-generated catch block
+			assertEquals(e.getMessage(), "Valor informado e invalido");
+		}
+	}
+	@Test
+	@Override
+	public void area() throws NumeroNegativoException {
+		// TODO Auto-generated method stub
+		Quadrado quadrado1 = new Quadrado(10);
+		assertEquals(quadrado1.area(), 20);
+		
+	}
+	@Test
+	@Override
+	public void perimetro() throws NumeroNegativoException {
+		Quadrado quadrado1 = new Quadrado(10);
+		assertEquals(quadrado1.perimetro(), 40);
+		
+	}
+
 
 }
