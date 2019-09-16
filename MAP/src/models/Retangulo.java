@@ -58,7 +58,7 @@ public class Retangulo implements FiguraGeometricaInterface {
 	@Override
 	public double perimetro() {
 		// TODO Auto-generated method stub
-		return 2 * this.largura;
+		return 2 * (this.largura + this.altura);
 	}
 	
 	
