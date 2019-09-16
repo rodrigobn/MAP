@@ -105,12 +105,21 @@ public class FigurasGeometricas {
 			double area1 = figura1.area();
 			double area2 = figura2.area();
 			
-			return (area1 + area2)/2;
-
-			
+			return (area1 + area2)/2;			
 		}
-		throw new FigurasDiferentesException();
-		
+		throw new FigurasDiferentesException();		
 	}
+
+	public Quadrado getQuadrado() {
+		return quadrado;
+	}
+
+	public Retangulo getRetangulo() {
+		return retangulo;
+	}
+
+	public Circulo getCirculo() {
+		return circulo;
+	}	
 
 }
