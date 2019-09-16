@@ -12,11 +12,9 @@ import interfaces.FiguraGeometricaTeste;
 import models.Quadrado;
 
 class QuadradoTeste implements FiguraGeometricaTeste{
-
+	Quadrado quadrado;
 	@Test
-	void testQuadrado() {
-		Quadrado quadrado = null;
-		
+	void testQuadrado() {		
 		try {
 			quadrado = new Quadrado(-10);
 			assertTrue(quadrado instanceof FiguraGeometricaInterface);
@@ -57,12 +55,8 @@ class QuadradoTeste implements FiguraGeometricaTeste{
 	}
 
 	@Override
-	public void isNull() {
-		Quadrado quadrado = null;
-		
-		assertNull(quadrado);
-	
-		
+	public void isNull() {		
+		assertNull(quadrado);		
 	}
 	@Test
 	@Override
@@ -73,13 +67,13 @@ class QuadradoTeste implements FiguraGeometricaTeste{
 	}
 	@Test
 	@Override
-	public void figuraComParametroInvalido() {
-		
+	public void figuraComParametroInvalido() {		
 		try {
 			Quadrado quadrado1 = new Quadrado(-1);
 		} catch (NumeroNegativoException e) {
 			// TODO Auto-generated catch block
 			assertEquals(e.getMessage(), "Valor informado e invalido");
+			assertNull(quadrado);
 		}
 	}
 	@Test
@@ -87,7 +81,7 @@ class QuadradoTeste implements FiguraGeometricaTeste{
 	public void area() throws NumeroNegativoException {
 		// TODO Auto-generated method stub
 		Quadrado quadrado1 = new Quadrado(10);
-		assertEquals(quadrado1.area(), 20);
+		assertEquals(quadrado1.area(), 100);
 		
 	}
 	@Test
