@@ -18,7 +18,7 @@ public class Quadrado implements FiguraGeometricaInterface {
 
 	@Override
 	public double area() {
-		return this.lado * 2;
+		return this.lado * lado;
 	}
 
 	@Override
