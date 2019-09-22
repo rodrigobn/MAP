@@ -36,7 +36,7 @@ public class Filme implements Comparable {
 	}	
 	
 	public boolean addFuncionario(Funcionario funcionario) {
-		if (this.getAtores().contains(funcionario)) {
+		if (this.getFuncionarios().contains(funcionario)) {
 			return false;
 		}
 		this.getAtores().add(funcionario);
