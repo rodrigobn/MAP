@@ -2,18 +2,19 @@ package models;
 
 import interfaces.Comparable;
 import interfaces.Funcionario;
-import interfaces.Pessoa;
 
-public class Diretor implements Comparable, Pessoa, Funcionario{
+public class Diretor implements Comparable, Funcionario{
 	
 	private String nome;
 	private int cpf;
 	private double salario;
+	private String funcao;
 	
 	public Diretor(String nome, int cpf) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.salario = 0;
+		this.funcao = "Diretor";
 	}
 	
 	@Override
@@ -23,7 +24,13 @@ public class Diretor implements Comparable, Pessoa, Funcionario{
 
 	@Override
 	public String getFuncao() {
-		return "Diretor";
+		return funcao;
+	}
+
+	@Override
+	public Boolean setFuncao(String funcao) {
+		this.funcao = funcao;
+		return true;
 	}
 
 	@Override
@@ -55,7 +62,7 @@ public class Diretor implements Comparable, Pessoa, Funcionario{
 
 	@Override
 	public String toString() {
-		return "Diretor [nome=" + nome + ", cpf=" + cpf + ", salario=" + salario + "]";
+		return "Diretor [nome=" + nome + ", cpf=" + cpf + ", salario=" + salario + ", Função=" + getFuncao() + "]";
 	}
 	
 	

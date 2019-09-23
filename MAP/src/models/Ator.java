@@ -1,19 +1,28 @@
 package models;
 
+import excecoes.NumeroNegativoException;
+import excecoes.StringVaziaEsception;
 import interfaces.Comparable;
 import interfaces.Funcionario;
-import interfaces.Pessoa;
 
-public class Ator implements Comparable, Pessoa, Funcionario {
+public class Ator implements Comparable, Funcionario {
 	
 	private String nome;
 	private int cpf;
 	private double salario;
+	private String funcao;
 	
-	public Ator(String nome, int cpf) {
+	public Ator(String nome, int cpf) throws NumeroNegativoException, StringVaziaEsception {
+		if (cpf < 0) {
+			throw new NumeroNegativoException();
+		}
+		if (nome == null || nome == "") {
+			throw new StringVaziaEsception();
+		}
 		this.nome = nome;
 		this.cpf = cpf;
 		this.salario = 0;
+		this.funcao = "Ator";
 	}
 	
 	@Override
@@ -23,20 +32,27 @@ public class Ator implements Comparable, Pessoa, Funcionario {
 		}
 		return 1;
 	}
-
+	@Override
 	public String getNome() {
 		return nome;
 	}
 
-	public void setNome(String nome) {
+	public void setNome(String nome) throws StringVaziaEsception {
+		if (nome == "" || nome == null) {
+			throw new StringVaziaEsception();
+		}
 		this.nome = nome;
 	}
-
+	
+	@Override
 	public int getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(int cpf) {
+	public void setCpf(int cpf) throws NumeroNegativoException {
+		if (cpf < 0) {
+			throw new NumeroNegativoException();
+		}
 		this.cpf = cpf;
 	}
 
@@ -47,21 +63,30 @@ public class Ator implements Comparable, Pessoa, Funcionario {
 
 	@Override
 	public String getFuncao() {
-		return "Ator";
+		return funcao;
 	}
 
 	@Override
-	public Boolean setSalario(double salario) {
-		if (salario > 0) {
-			this.salario = salario;
-			return true;	
+	public Boolean setFuncao(String funcao) throws StringVaziaEsception {
+		if (funcao == "" || funcao == null) {
+			throw new StringVaziaEsception();
 		}
-		return false;
+		this.funcao = funcao;
+		return true;
+	}
+
+	@Override
+	public Boolean setSalario(double salario) throws NumeroNegativoException {
+		if (salario < 0) {
+			throw new NumeroNegativoException();	
+		}
+		this.salario = salario;
+		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Ator [nome=" + nome + ", cpf=" + cpf + ", salario=" + salario + "]";
+		return "Ator [nome=" + nome + ", cpf=" + cpf + ", salario=" + salario + ", Função=" + getFuncao() +"]";
 	}
 	
 }
