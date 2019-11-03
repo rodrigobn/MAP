@@ -1,7 +1,7 @@
 package interfaces;
 
-public interface Queijo {
+public interface Ovo {
 	
 	public String getTipo();
-
+	
 }
