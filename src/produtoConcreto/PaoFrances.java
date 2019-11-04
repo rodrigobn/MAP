@@ -18,13 +18,13 @@ private static Pao instancia;
 	
 	@Override
 	public String getTipo() {
-		return "Francês";		
+		return "Frances";		
 	}
 	
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Pão " + getTipo());
+		builder.append("Pao" + getTipo());
 		return builder.toString();
 	}
 }

@@ -63,6 +63,21 @@ public class Sanduiche {
 	public void setTomate(Tomate tomate) {
 		this.tomate = tomate;
 	}
+
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		String toString = "Fatia de Pao 1 : " + this.getFatia1().getTipo() +"\n".
+				concat("Fatia de Pao 2 : " + this.getFatia2().getTipo() +"\n").
+				concat("Fatia de Queijo : " + this.getQueijo().getTipo() +"\n").
+				concat("Fatia de Presunto : " + this.getPresunto().getTipo() +"\n").
+				concat("Ovo : " + this.getOvo().getTipo() +"\n")
+				.concat("Tomate : " + this.getTomate().toString() +"\n");
+		
+		return toString;
+	}
+	
 	
 	
 	
