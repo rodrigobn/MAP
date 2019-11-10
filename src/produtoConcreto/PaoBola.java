@@ -6,7 +6,8 @@ public class PaoBola implements Pao{
 	
 	private static Pao instancia;
 	
-	private PaoBola() {
+
+	public PaoBola() {
 		
 	}
 	

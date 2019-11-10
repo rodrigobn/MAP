@@ -1,4 +1,5 @@
 package Main;
+
 import interfaces.Ovo;
 import interfaces.Pao;
 import interfaces.Presunto;
@@ -6,14 +7,77 @@ import interfaces.Queijo;
 import produtoConcreto.Tomate;
 
 public class Sanduiche {
-
-	public Sanduiche(Pao pao, Queijo queijo, Presunto presunto, Ovo ovo, Tomate tomate ) {
-		System.out.println("Duas fatias de " + pao);
-		System.out.println("Uma fatia de " + queijo);
-		System.out.println("Uma fatia de " + presunto);
-		System.out.println("Um " + ovo);
-		System.out.println("e " + tomate);
+	
+	private Pao fatia1;
+	private Pao fatia2;
+	private Queijo queijo;
+	private Presunto presunto;
+	private Ovo ovo;
+	private Tomate tomate;
+	
+	
+	public Sanduiche(Pao fatia1, Pao fatia2, Queijo queijo, Presunto presunto, Ovo ovo, Tomate tomate) {
+		super();
+		this.fatia1 = fatia1;
+		this.fatia2 = fatia2;
+		this.queijo = queijo;
+		this.presunto = presunto;
+		this.ovo = ovo;
+		this.tomate = tomate;
 	}
+	
+	
+	public Pao getFatia1() {
+		return fatia1;
+	}
+	public void setFatia1(Pao fatia1) {
+		this.fatia1 = fatia1;
+	}
+	public Pao getFatia2() {
+		return fatia2;
+	}
+	public void setFatia2(Pao fatia2) {
+		this.fatia2 = fatia2;
+	}
+	public Queijo getQueijo() {
+		return queijo;
+	}
+	public void setQueijo(Queijo queijo) {
+		this.queijo = queijo;
+	}
+	public Presunto getPresunto() {
+		return presunto;
+	}
+	public void setPresunto(Presunto presunto) {
+		this.presunto = presunto;
+	}
+	public Ovo getOvo() {
+		return ovo;
+	}
+	public void setOvo(Ovo ovo) {
+		this.ovo = ovo;
+	}
+	public Tomate getTomate() {
+		return tomate;
+	}
+	public void setTomate(Tomate tomate) {
+		this.tomate = tomate;
+	}
+
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		String toString = "Fatia de Pao 1 : " + this.getFatia1().getTipo() +"\n".
+				concat("Fatia de Pao 2 : " + this.getFatia2().getTipo() +"\n").
+				concat("Fatia de Queijo : " + this.getQueijo().getTipo() +"\n").
+				concat("Fatia de Presunto : " + this.getPresunto().getTipo() +"\n").
+				concat("Ovo : " + this.getOvo().getTipo() +"\n")
+				.concat("Tomate : " + this.getTomate().toString() +"\n");
+		
+		return toString;
+	}
+	
 	
 	
 	
