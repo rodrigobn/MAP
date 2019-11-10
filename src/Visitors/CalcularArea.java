@@ -15,31 +15,28 @@ public class CalcularArea implements VisitorIF {
 	@Override
 	public double visitaCirculo(Circulo c) {
 		double area = 2 * 3.14 * c.getRaio();
-		System.out.println("Área do Circulo: " + area);
-		
+		System.out.println("ï¿½rea do Circulo: " + area);		
 		return area;
 	}
 
 	@Override
 	public double visitaTriangulo(Triangulo t) {
 		double area = t.getBase() * t.getAltura()/ 2;
-		System.out.println("Área do Triangulo: " + area);
+		System.out.println("ï¿½rea do Triangulo: " + area);
 		return area; 
 	}
 
 	@Override
 	public double visitaRetangulo(Retangulo r) {
-		double area = r.getAltura()
-				* r.getLargura();
-		System.out.println("Área do Retangulo: " + area);
+		double area = r.getAltura() * r.getLargura();
+		System.out.println("ï¿½rea do Retangulo: " + area);
 		return area;
 	}
 
 	@Override
 	public double visitaTrapezio(Trapezio t) {
 		double area =(t.getBaseMenor() + t.getBaseMaior()) * t.getAltura() / 2;
-		System.out.println("Área do Trapezio: " + area
-				);
+		System.out.println("ï¿½rea do Trapezio: " + area);
 		return area;
 	}
 
