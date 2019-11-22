@@ -68,15 +68,20 @@ public class ListMap implements Map<Object, Object> {
 	@Override
 	public Object put(Object index, Object element) {
 		if (index instanceof Integer) {
-			this.list.add((int) index, element);
-			return element;
+			if (this.list.size() <= (int) index) {
+				this.list.add((int) index, element);
+				return element;
+			}
 		}		
 		return null;
 	}
 	
 	public Object put(int index, Object element) {
-		this.list.add(index, element);
-		return element;
+		if (this.list.size() <= index) {
+			this.list.add(index, element);
+			return element;
+		}
+		return null;		
 	}
 
 	@Override
