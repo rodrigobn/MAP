@@ -68,7 +68,7 @@ public class ListMap implements Map<Object, Object> {
 	@Override
 	public Object put(Object index, Object element) {
 		if (index instanceof Integer) {
-			if (this.list.size() <= (int) index) {
+			if ((int) index <= this.list.size()) {
 				this.list.add((int) index, element);
 				return element;
 			}
@@ -77,7 +77,7 @@ public class ListMap implements Map<Object, Object> {
 	}
 	
 	public Object put(int index, Object element) {
-		if (this.list.size() <= index) {
+		if (index <= this.list.size()) {
 			this.list.add(index, element);
 			return element;
 		}
