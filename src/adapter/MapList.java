@@ -33,14 +33,12 @@ public class MapList implements List<Object> {
 
 	@Override
 	public boolean addAll(Collection<? extends Object> c) {
-		// TODO Auto-generated method stub
-		return false;
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public boolean addAll(int index, Collection<? extends Object> c) {
-		// TODO Auto-generated method stub
-		return false;
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
@@ -56,8 +54,7 @@ public class MapList implements List<Object> {
 
 	@Override
 	public boolean containsAll(Collection<?> c) {
-		// TODO Auto-generated method stub
-		return false;
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
@@ -67,8 +64,7 @@ public class MapList implements List<Object> {
 
 	@Override
 	public int indexOf(Object o) {
-		// TODO Auto-generated method stub
-		return 0;
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
@@ -84,25 +80,26 @@ public class MapList implements List<Object> {
 
 	@Override
 	public int lastIndexOf(Object o) {
-		// TODO Auto-generated method stub
-		return 0;
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public ListIterator<Object> listIterator() {
-		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public ListIterator<Object> listIterator(int index) {
-		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public boolean remove(Object o) {
-		return (boolean) map.remove(o);
+		if (!this.map.isEmpty()) {
+			map.remove(o);
+			return true;
+		}
+		return false;		
 	}
 
 	@Override
@@ -112,20 +109,17 @@ public class MapList implements List<Object> {
 
 	@Override
 	public boolean removeAll(Collection<?> c) {
-		// TODO Auto-generated method stub
-		return false;
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public boolean retainAll(Collection<?> c) {
-		// TODO Auto-generated method stub
-		return false;
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public Object set(int index, Object element) {
-		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
@@ -135,8 +129,7 @@ public class MapList implements List<Object> {
 
 	@Override
 	public List<Object> subList(int fromIndex, int toIndex) {
-		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
@@ -152,8 +145,7 @@ public class MapList implements List<Object> {
 
 	@Override
 	public <T> T[] toArray(T[] a) {
-		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
 }
