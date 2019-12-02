@@ -9,7 +9,7 @@ public class Rodoviaria {
 
 	public static void main(String[] args) {
 		Guiche guiche = new Guiche();
-		Onibus onibus = new Onibus();
+		Onibus onibus = new Onibus(10);
 		onibus.addOnibusListener(guiche);
 		
 		int opcao = 1;

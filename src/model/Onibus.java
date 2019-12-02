@@ -12,8 +12,8 @@ public class Onibus {
 	
 	List<OnibusListener> onibusListeners = new ArrayList<OnibusListener>();
 	
-	public Onibus() {
-		this.acentos = new Acento[10];
+	public Onibus(int totalAcentos) {
+		this.acentos = new Acento[totalAcentos];
 		for (int i = 0; i < acentos.length; i++) {
 			Acento umAcento = new Acento();
 			acentos[i] = umAcento;
@@ -87,13 +87,5 @@ public class Onibus {
 		for (int i = 0; i < acentos.length; i++) {
 			System.out.println("Acento: " + i + " = " + acentos[i]);
 		}
-	}
-	
-	public static void main(String[] args) {
-		Onibus onibus = new Onibus();
-		
-		onibus.mostraAcentos();
-	}
-	
-	
+	}	
 }
